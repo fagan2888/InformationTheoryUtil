@@ -42,18 +42,19 @@ def gini_y(y):
         ret += pi * (1 - pi)
     return ret
 
-assert 2.0 == entropy_y(np.array([1, 2, 3, 4]))
-assert 1.0 == entropy_y(np.array([1, 2]))
-assert 1.0 == entropy_y(np.array([1, 2, 1, 2]))
-assert 0.0 == entropy_y(np.array([1, 1, 1, 1]))
+if __name__ == '__main__':
+    assert 2.0 == entropy_y(np.array([1, 2, 3, 4]))
+    assert 1.0 == entropy_y(np.array([1, 2]))
+    assert 1.0 == entropy_y(np.array([1, 2, 1, 2]))
+    assert 0.0 == entropy_y(np.array([1, 1, 1, 1]))
 
-X = np.array([[1, 1], [2, 2], [2, 2], [3, 3], [3, 4], [3, 5], [4, 1], [4, 1], [4, 4], [4, 4]])
-y = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
+    X = np.array([[1, 1], [2, 2], [2, 2], [3, 3], [3, 4], [3, 5], [4, 1], [4, 1], [4, 4], [4, 4]])
+    y = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
 
-print('entropy_(y):{}'.format(entropy_y(y)))
-print('cond_entropy:{}'.format(cond_entropy(X, y, feat_index=0)))
-print('info_gain:{}'.format(info_gain(X, y, feat_index=0)))
-print('info_gain_ratio:{}'.format(info_gain_ratio(X, y, feat_index=0)))
-print('gini:{}'.format(gini_y([1, 1, 1])))
-print('gini:{}'.format(gini_y([1, 2])))
-print('gini:{}'.format(gini_y([1, 2, 1, 2])))
+    print('entropy_(y):{}'.format(entropy_y(y)))
+    print('cond_entropy:{}'.format(cond_entropy(X, y, feat_index=0)))
+    print('info_gain:{}'.format(info_gain(X, y, feat_index=0)))
+    print('info_gain_ratio:{}'.format(info_gain_ratio(X, y, feat_index=0)))
+    print('gini:{}'.format(gini_y([1, 1, 1])))
+    print('gini:{}'.format(gini_y([1, 2])))
+    print('gini:{}'.format(gini_y([1, 2, 1, 2])))
